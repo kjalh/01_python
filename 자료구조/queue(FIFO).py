@@ -16,7 +16,7 @@ def enqueue(): # 데이터 추가
 
 def dequeue(): # 데이터 삭제
 
-    for 
+    
     pass
 
 
