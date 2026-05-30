@@ -10,6 +10,8 @@ def enqueue(): # 데이터 추가
         queue[i] = data # 데이터 넣기
 
         i += 1  # 데이터 위치 1 증가
+        if i >= size:
+            i = size - 1
         
 
 
@@ -28,9 +30,11 @@ def dequeue(): # 데이터 삭제
             queue[j] = queue[j+1]   # 뒤에 있는 데이터를 앞으로 옮기는 작업
             queue[j+1] = None       # 값을 뺄 때 마지막 값에 None을 넣어줌
             j += 1
+            
             i -= 1
-        else:
-            break
+            if i < 0:
+                i = 0
+
 
 
 

@@ -1,4 +1,4 @@
-i = 0 # 데이터 넣는 위치 결정
+i = -1 # 데이터 넣는 위치 결정
 
 def push(): # 데이터 추가
     global i
@@ -6,39 +6,28 @@ def push(): # 데이터 추가
         return print("\n스택 꽉 차있음, 데이터 삭제 바람\n")
     else:
         data = input("넣고 싶은 데이터 입력: ")
-        stack[i] = data # 데이터 넣기
         i += 1  # 데이터 위치 1 증가
-
-        if i >= size:
-            i -= 1
+        stack[i] = data # 데이터 넣기
+        
+    print(f"i = {i}")
 
 
 def pop():  # 데이터 삭제
     global i
 
     if stack[0] == None:
-        print("스택 비어 있음")
+        i = -1
+        return print("스택 비어 있음")
+        
 
     stack[i] = None
     i -= 1
 
-    if i <= 0:
-        i = 0
+    print(f"i = {i}")
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-size = int(input("큐의 크기: "))
+size = int(input("스택의 크기: "))
 
 stack = [None] * size 
 
@@ -64,8 +53,6 @@ while True:
         print()
     
     print(stack)  # 스택 확인 없어도 됨
-
-
 
 
 
