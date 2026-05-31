@@ -1,39 +1,50 @@
-i = 0      # 데이터 넣는 위치 결정
+i = 0      
 
-def enqueue(): # 데이터 추가
+def enqueue(): 
     global i
 
-    if queue[size-1] != None:   #   큐 전부 채워져 있는지 확인
+    if queue[size-1] != None:   
+        i = size - 1
         return print("\n큐가 꽉 차있음, 데이터 삭제 바람\n")
     else:
+        
         data = input("넣고 싶은 데이터 입력: ")
-        queue[i] = data # 데이터 넣기
 
-        i += 1  # 데이터 위치 1 증가
+        queue[i] = data 
+        i += 1  
+
         if i >= size:
             i = size - 1
+        print(f"i = {i}")
         
 
 
 
 
-def dequeue(): # 데이터 삭제
+def dequeue(): 
     global i
-    if queue[0] == None:    # 큐 비어 있는지 확인
+    if queue[0] == None:    
         return print("큐가 비어 있음")
     
     print(f"1번 제거 {queue[0]}")
     
     j = 0   # 반복문에 쓸 j 선언
-    while True if j != None else False: # 뒤에 있는 데이터를 앞으로 옮기는 작업
+
+    while queue[j+1] != None:
         if j < size - 1 :
-            queue[j] = queue[j+1]   # 뒤에 있는 데이터를 앞으로 옮기는 작업
-            queue[j+1] = None       # 값을 뺄 때 마지막 값에 None을 넣어줌
+            queue[:] = queue[1:]   
+            if j == size - 1:
+                queue[-1] = None    
             j += 1
-            
-            i -= 1
-            if i < 0:
-                i = 0
+        else:                       
+            break
+    
+    i -= 1
+
+    if i < 0:
+        i = 0
+
+    print(f"i = {i}")
 
 
 

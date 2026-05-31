@@ -53,25 +53,3 @@ while True:
         print()
     
     print(stack)  # 스택 확인 없어도 됨
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
