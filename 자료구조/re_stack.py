@@ -29,7 +29,7 @@ class Stack:
 
     def pop(self):
 
-        if self.idx < self.size and self.idx >= 0:
+        if self.idx <= self.size and self.idx >= 0:
             self.idx -= 1
             self.stack[self.idx] = None
             
