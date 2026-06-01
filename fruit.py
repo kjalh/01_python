@@ -16,3 +16,13 @@ class Fruit:
     def print_info(self):
         print(f"과일 이름: {self.name}")
         print(f"수량: {self.quantity}")
+
+    
+def hello():
+    print("과일 모듈입니다.")
+
+print("__name__ 값:", __name__)
+
+if __name__ == "__main__":
+    print("직접 실행되었습니다.")
+    hello()

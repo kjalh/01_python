@@ -7,17 +7,20 @@ class Stack:
 
 
     def push(self):
+        if None not in self.stack:
+            print(self.stack)
+            self.idx = self.size
+            return print("꽉참")
+        
         d = input("입력 값: ")
         
-        if self.idx >= self.top:
-            print(self.stack)
-            return print("꽉참")
-        elif self.idx >= 0 and self.idx <= self.size:
+        
+        if self.idx >= 0 and self.idx <= self.size:
             self.stack[self.idx] = d
             self.idx += 1
 
             if self.idx >= self.size:
-                self.idx -= 1
+                self.idx = self.size
 
             print(self.stack)
             return print("입력 됨")
@@ -29,9 +32,10 @@ class Stack:
         if self.idx < self.size and self.idx >= 0:
             self.idx -= 1
             self.stack[self.idx] = None
+            
 
             if self.idx < 0:
-                self.idx += 1
+                self.idx = 0
             
             print(self.stack)
             return print("빠짐")
