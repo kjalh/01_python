@@ -102,7 +102,7 @@ def root():
 
 @app.post("/create_ad", response_model=AdResponse)
 def create_ad(product: ProductRequest):
-    generated_ad = ad_generator.generate(product_name=product.product_name,details=product.details, tone_and_manner= product.tone_and_manner)
+    generated_ad = ad_generator.generate(product_name=product.product_name, details=product.details, tone_and_manner= product.tone_and_manner)
 
     document = {
         "product_name":product.product_name,
